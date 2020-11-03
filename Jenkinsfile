@@ -3,7 +3,8 @@ node{
      git 'https://github.com/avipalve/maven20'
     }
     stage('Compile-Package'){
-      sh 'mvn package'
+     def maven20 = tool name: 'maven2', type: 'maven'
+       sh "${maven20}/bin/mvn package"
     }  
     
 }    
